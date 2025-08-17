@@ -1,6 +1,5 @@
 import os
 import unittest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from utils.driver_factory import get_driver
 import time
@@ -42,6 +41,3 @@ class ExampleTestCase(unittest.TestCase):
         
         send_icon.click()
         
-    
-if __name__ == '__main__':
-    unittest.main()
