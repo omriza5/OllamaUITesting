@@ -43,6 +43,5 @@ class ExampleTestCase(unittest.TestCase):
         send_icon.click()
         
     
-
 if __name__ == '__main__':
     unittest.main()
