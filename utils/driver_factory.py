@@ -39,6 +39,7 @@ class DriverFactory:
         
         driver = webdriver.Firefox(options=options)
         driver.set_window_size(self.width, self.height)
+        options.binary_location = "/usr/local/bin/firefox"
         return driver
 
 # Usage in your tests
