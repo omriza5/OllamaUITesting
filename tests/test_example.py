@@ -1,10 +1,9 @@
-import os
 import unittest
 from selenium.webdriver.common.by import By
 from utils.driver_factory import get_driver
-import time
+from utils.config import Config
 
-OLLAMA_URL = os.environ.get('OLLAMA_URL', 'http://localhost:3000')  # Default to localhost if not set
+OLLAMA_URL = Config.ollama_url()
 class ExampleTestCase(unittest.TestCase):
     def setUp(self):
         self.driver = get_driver()

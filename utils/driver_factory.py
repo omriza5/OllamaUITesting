@@ -1,15 +1,14 @@
-import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
-
+from utils.config import Config
 class DriverFactory:
     def __init__(self):
-        self.browser = os.getenv('BROWSER', 'chrome')
-        self.width = int(os.getenv('SCREEN_WIDTH', '1920'))
-        self.height = int(os.getenv('SCREEN_HEIGHT', '1080'))
-        self.headless = os.getenv('HEADLESS', 'false').lower() == 'true'
-    
+        self.browser = Config.browser()
+        self.width = Config.screen_width()
+        self.height = Config.screen_height()
+        self.headless = Config.headless()
+
     def create_driver(self):
         if self.browser == 'chrome':
             return self._create_chrome_driver()
