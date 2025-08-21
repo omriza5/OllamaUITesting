@@ -12,9 +12,11 @@ class NavigationBase:
 
     def go_to_settings(self):
         raise NotImplementedError("Subclasses must implement go_to_settings()")
-
+    
     def change_theme_mode(self, mode):
-        raise NotImplementedError("Subclasses must implement change_theme_mode()")
+        theme_button = self.driver.find_element(
+            By.XPATH, f"//button[.//p[text()='{mode.value}']]")
+        theme_button.click()
 
     def get_current_theme_mode(self):
         DARK_MODE = "dark"

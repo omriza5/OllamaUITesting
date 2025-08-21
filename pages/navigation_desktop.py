@@ -8,7 +8,6 @@ class NavigationDesktop(NavigationBase):
         super().__init__(driver)
         self.menu_container = (By.XPATH, "//button[@aria-haspopup='menu']")
         
-
     def go_to_settings(self):
         menu_container = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.menu_container)
@@ -19,14 +18,6 @@ class NavigationDesktop(NavigationBase):
         )
         settings_button.click()
 
-
-    def change_theme_mode(self, mode):
-        theme_button = self.driver.find_element(
-            By.XPATH,
-            f"//button[.//p[text()='{mode.value}']]"
-        )
-        theme_button.click()
-        
     def set_theme_mode(self, mode):
         self.go_to_settings()
         self.change_theme_mode(mode)

@@ -27,13 +27,6 @@ class NavigationMobile(NavigationBase):
             EC.element_to_be_clickable(self.settings_btn)
         )
         settings_button.click()
-
-    def change_theme_mode(self, mode):
-        theme_button = self.driver.find_element(
-            By.XPATH,
-            f"//button[.//p[text()='{mode.value}']]"
-        )
-        theme_button.click()
         
     def set_theme_mode(self, mode):
         self.go_to_settings()
