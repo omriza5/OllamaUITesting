@@ -6,6 +6,7 @@ SCREEN_WIDTH = "SCREEN_WIDTH"
 SCREEN_HEIGHT = "SCREEN_HEIGHT"
 HEADLESS = "HEADLESS"
 OLLAMA_URL = "OLLAMA_URL"
+TEST_NAME = "TEST_NAME"
 
 # Default values
 DEFAULT_BROWSER = "chrome"
@@ -13,6 +14,8 @@ DEFAULT_SCREEN_WIDTH = "1920"
 DEFAULT_SCREEN_HEIGHT = "1080"
 DEFAULT_HEADLESS = "false"
 DEFAULT_OLLAMA_URL = "http://localhost:3000"
+DEFAULT_TEST_NAME = "default_test_name"
+
 
 class Config:
     @classmethod
@@ -34,3 +37,7 @@ class Config:
     @classmethod
     def ollama_url(cls):
         return os.getenv(OLLAMA_URL, DEFAULT_OLLAMA_URL)
+    
+    @classmethod
+    def test_device_name(cls):
+        return os.getenv(TEST_NAME, DEFAULT_TEST_NAME)
