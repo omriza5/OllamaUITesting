@@ -10,6 +10,7 @@ class TestNavigation(unittest.TestCase):
         self.driver = get_driver()
         self.navigation_page = get_navigation_page(self.driver, Config.screen_width())
         self.driver.get(Config.ollama_url())
+        self.driver.implicitly_wait(10)
 
     def tearDown(self):
         self.driver.quit()
