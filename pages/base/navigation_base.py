@@ -7,11 +7,12 @@ class NavigationBase:
         self.settings_btn = (By.XPATH, "//button[.//div[@role='menuitem']//div[contains(., 'Settings')]]")
         self.main_html_tag = (By.TAG_NAME, "html")
 
-    def set_theme_mode(self, mode):
-        raise NotImplementedError("Subclasses must implement set_theme_mode()")
-
     def go_to_settings(self):
         raise NotImplementedError("Subclasses must implement go_to_settings()")
+    
+    def set_theme_mode(self, mode):
+        self.go_to_settings()
+        self.change_theme_mode(mode)
     
     def change_theme_mode(self, mode):
         theme_button = self.driver.find_element(

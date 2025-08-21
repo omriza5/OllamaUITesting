@@ -27,7 +27,4 @@ class NavigationMobile(NavigationBase):
             EC.element_to_be_clickable(self.settings_btn)
         )
         settings_button.click()
-        
-    def set_theme_mode(self, mode):
-        self.go_to_settings()
-        self.change_theme_mode(mode)
+
