@@ -17,7 +17,8 @@ class TestNavigation(unittest.TestCase):
         self.driver.quit()
 
     @allure.severity(severity_level.CRITICAL)
-    @allure.label("test_device_name", Config.test_device_name())
+    @allure.tag(Config.test_device_name())
+    @allure.title("User can switch to dark mode and see the theme applied")
     def test_dark_mode(self):
         self.navigation_page.set_theme_mode(ThemeMode.DARK)
         self.assertEqual(self.navigation_page.get_current_theme_mode(), ThemeMode.DARK)
