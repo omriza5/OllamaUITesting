@@ -17,3 +17,5 @@ class NavigationDesktop(NavigationBase):
             EC.element_to_be_clickable(self.settings_btn)
         )
         settings_button.click()
+        
+        # [ ] - add return self for chaining use
